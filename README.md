@@ -41,6 +41,17 @@ each time you run the main script.
 
 By running the comparer script, it will show who started or stopped following you since the first script.
 
+* Run the main script in two different moments
+  ```sh
+  python3 main.py
+  ```
+  
+  * Run the comparer script
+  ```sh
+  python3 comparer.py
+  ```
+  
+ 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
