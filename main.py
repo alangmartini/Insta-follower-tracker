@@ -1,20 +1,19 @@
-import instaloader
 import time
+import instaloader
 
 o = instaloader.instaloader.Instaloader()
 
-username = 'your_username_here'
-password = 'your_password_here'
+USERNAME = 'your_username_here'
+PASSWORD = 'your_password_here'
 
-o.login(user=username, passwd=password)
+o.login(user=USERNAME, passwd=PASSWORD)
 
-profile = instaloader.Profile.from_username(o.context, username=username)
+profile = instaloader.Profile.from_username(o.context, username=USERNAME)
 
 followers = profile.get_followers()
 current_day_arr = time.ctime().split(' ')
-current_day_name = '-'.join(current_day_arr) + '.txt'
+CURRENT_DAY_NAME = '-'.join(current_day_arr) + '.txt'
 
-file = open(current_day_name, 'w')
-
-for fol in followers:
-  file.write(fol.username + '\n')
+with open(CURRENT_DAY_NAME, 'w', encoding='utf-8') as file:
+    for fol in followers:
+        file.write(fol.username + '\n')
